@@ -5,6 +5,8 @@ class Player {
     this.name = null;
     this.rank = null;
     this.choice = 0;
+    this.carState = "Fine"
+    this.xPos = 0;
   }
 
   getCount(){
@@ -25,7 +27,9 @@ class Player {
     database.ref(playerIndex).set({
       name:this.name,
       distance:this.distance, 
-      choice: this.choice
+      choice: this.choice,
+      carState: this.carState,
+      xPos: this.xPos
     });
   }
 

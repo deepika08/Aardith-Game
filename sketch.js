@@ -6,6 +6,9 @@ var allPlayers;
 var distance = 0;
 var database;
 
+var xVel = 0;
+var yVel = 0;
+
 var form, player, game;
 
 var cars, car1, car2, car3, car4;
@@ -22,7 +25,7 @@ function preload(){
   o1 = loadImage("images/o1.png");
   o2 = loadImage("images/o2.png");
   o3 = loadImage("images/o3.png");
-  pain = loadImage("images/PAIN.png");
+  pain = loadImage("images/PAINNN.png");
   crash = loadSound("images/Old Car.mp3");
   defaultCar = loadImage("images/car1.png");
   bg = loadImage("images/backgroundtrack.jpg");
@@ -37,6 +40,7 @@ function setup(){
     w = random(200,950)
     h = random(-height*4, height - 200)
     obs = createSprite(w,h)
+    obs.debug = true;
     var r = Math.round(random(1,3));
     switch(r){
       case 1: obs.addImage(o1);
